@@ -2,7 +2,7 @@ const http = require('http')
 const fs = require('fs')
 var requests = require("requests");
 
-const homeFile = fs.readFileSync('home.html', "utf-8")
+const indexFile = fs.readFileSync('index.html', "utf-8")
 const InsertVal = (destination, source) => {
     let details = destination.replace("{%temp_val%}", kelvinToCelcius(source.main.temp));
     details = details.replace("{%humidity%}", source.main.humidity);
@@ -42,7 +42,7 @@ const server = http.createServer((req, res) => {
             .on("data", (chunk) => {
                 const objData = JSON.parse(chunk);
                 const arrData = [objData];
-                const RealTimeData = arrData.map((value) => InsertVal(homeFile, value)).join("");
+                const RealTimeData = arrData.map((value) => InsertVal(indexFile, value)).join("");
                 res.write(RealTimeData);
             })
             .on("end", (err) => {
