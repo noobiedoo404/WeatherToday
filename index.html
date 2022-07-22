@@ -22,7 +22,8 @@
         * {
             /* padding: 0;
             margin: 10; */
-            font-family: 'Quicksand', sans-serif;
+            /* font-family: 'Quicksand', sans-serif; */
+            font-family: 'Amatic SC', cursive;
         }
         
         body {
@@ -65,14 +66,14 @@
             position: absolute;
             right: 12px;
             font-size: 1.5rem;
-            font-family: Dosis;
+            font-family: 'Amatic SC', cursive;
             font-weight: 550;
         }
         
         .wave {
             opacity: 0.3;
             position: absolute;
-            top: 115%;
+            top: 112%;
             left: 0%;
             background: powderblue;
             width: 144rem;
@@ -165,7 +166,8 @@
         .temp {
             margin-top: 2.5rem;
             text-align: center;
-            font-size: 3rem;
+            font-size: 2rem;
+            font-weight: 50;
         }
         
         .main {
@@ -177,14 +179,12 @@
         }
         
         #weathercon {
-            height: 33%;
+            margin-top: 10rem;
+            height: 80%;
+            max-height: 100px;
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            font-size: 3em;
-        }
-        
-        #weathercon .fas {
+            align-items: center;
             font-size: 6rem;
             animation: fas 3s linear infinite alternate;
         }
@@ -206,9 +206,9 @@
             .wave {
                 top: 85%;
             }
-            #weathercon {
+            /* #weathercon {
                 font-size: 1.5rem;
-            }
+            } */
             .info {
                 font-size: 80vh;
             }
@@ -231,19 +231,28 @@
         }
         
         #conText {
-            font-size: 19px;
-            font-family: Montserrat;
-            animation: test 3s linear infinite alternate;
+            font-size: 5rem;
+            font-weight: 15;
+            font-family: 'Amatic SC', cursive;
+            ;
+            /* animation: test 3s linear infinite alternate; */
         }
         
-        @keyframes test {
+        #tempStatus {
+            font-size: 3rem;
+            font-weight: 15;
+            font-family: 'Amatic SC', cursive;
+            ;
+            /* animation: test 3s linear infinite alternate; */
+        }
+        /* @keyframes test {
             from {
-                transform: scale(1.5);
+                transform: scale(2);
             }
             to {
-                transform: scale(.8);
+                transform: scale(1);
             }
-        }
+        } */
         
         body>span {
             width: 100vw;
@@ -275,15 +284,17 @@
 
 
         <div id="weathercon">
-            <i class="fas fa-solid fa-sun" style="color: #eccc68;"></i>
+            <img id="image" src="/fog.png" width="60" height="60">
         </div>
         <div class="condition">
-            <i id="conText">{%tempStatus%}</i>
+            <h1 id="conText" style="color: #1C2331;">{%temp_val%}</h1>
         </div>
 
         <div class="info">
 
-            <h1 class="temp">{%temp_val%}</h1>
+            <div class="condition">
+                <i id="tempStatus">{%tempStatus%}</i>
+            </div>
 
 
 
@@ -299,20 +310,27 @@
 </body>
 <script>
     const day = document.getElementById("date");
-    let weathercon = document.getElementById("weathercon");
+    // let weathercon = document.getElementById("weathercon");
     let thisTime = document.getElementById("time");
+    let tempStatus = document.getElementById("tempStatus").innerHTML;
 
-    const tempStatus = "{%tempStatus%}";
+    // const tempStatus = "{%tempStatus%}";
+    console.log(tempStatus);
+
     //condition to check weather
     if (tempStatus == "Sunny") {
-        weathercon.innerHTML = "<i class='fas fa-sun' style='color: #eccc68;'></i>";
+        document.getElementById("image").src = "https://cdn-icons.flaticon.com/png/512/3199/premium/3199959.png?token=exp=1658522291~hmac=2bdaca7d675b81c4d8363fa46b8b98cb";
 
+    } else if (tempStatus == "Haze") {
+        document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/128/1197/1197102.png";
+        // document.getElementById("image").src = "https://www.nicepng.com/png/full/123-1236627_haze-icon-png-haze-weather-icon.png";
+        // weathercon.innerHTML = "<i class='fas  fa-solid fa-sun-haze' style='color: #eccc68;'></i>";
     } else if (tempStatus == "Clouds") {
-        weathercon.innerHTML = "<i class='fas fa-cloud' style='color: #f1f2f6;'></i>";
+        document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/512/6316/6316087.png";
     } else if (tempStatus == "Rainy") {
-        weathercon.innerHTML = "<i class='fas fa-cloud-rain' style='color: #a4b0be;'>";
+        document.getElementById("image").src = "https://icons-for-free.com/iconfiles/png/512/fog+foggy+weather+icon-1320196634851598977.png";
     } else {
-        weathercon.innerHTML = "<i class='fas fa-sun' style='color: #eccc68;'></i>";
+        weathercon.innerHTML = "<i class='fas  fa-sun' style='color: #eccc68';></i>";
     }
 
 
