@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/business-and-finance-colored-3/64/business-and-finance-colored-3-11-512.png">
+    <!-- <link rel="icon" href="./BrowserLogo.jpeg"> -->
+
+    <title>WeatherToday</title>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css" integrity="sha512-p++g4gkFY8DBqLItjIfuKJPFvTPqcg2FzOns2BNaltwoCOrXMqRIOqgWqWEvuqsj/3aVdgoEo2Y7X6SomTfUPA==" crossorigin="anonymous" referrerpolicy="no-referrer"
@@ -20,9 +26,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         * {
-            /* padding: 0;
-            margin: 10; */
-            /* font-family: 'Quicksand', sans-serif; */
             font-family: 'Amatic SC', cursive;
         }
         
@@ -47,8 +50,8 @@
         }
         
         .box {
-            width: 62vw;
-            height: 65vh;
+            /* width: 62vw; */
+            /* height: 65vh; */
             border-radius: 1.5rem;
             border: 5px solid black;
             box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
@@ -59,22 +62,27 @@
             transform: translate3d(0, 0, 0);
             min-width: 20rem;
             max-width: 60rem;
-            margin-top: 16vh;
+            /* margin-top: 10vh; */
+            height: 88vh;
+            margin-top: 11vh;
+            width: 61vh;
+            margin-top: 10vh;
+            bottom: 6vh;
         }
         
         #time {
             position: absolute;
             right: 12px;
             font-size: 1.5rem;
-            font-family: 'Amatic SC', cursive;
             font-weight: 550;
         }
         
         .wave {
             opacity: 0.3;
             position: absolute;
-            top: 112%;
-            left: 0%;
+            top: 95%;
+            left: -10%;
+            /* right: 8%; */
             background: powderblue;
             width: 144rem;
             height: 140rem;
@@ -197,30 +205,75 @@
                 transform: scale(1.5);
             }
         }
+        /* for mobile */
         
-        @media (max-width: 600px) {
+        @media screen and (max-width: 480px) {
             .box {
-                width: 90vw;
-                height: 80vh;
+                height: 88vh;
+                margin-top: 11vh;
+                width: 61vh;
+                margin-top: 10vh;
+                bottom: 6vh;
             }
             .wave {
-                top: 85%;
+                top: 103%;
+                left: -22vh;
             }
-            /* #weathercon {
-                font-size: 1.5rem;
+            /* .location {
+                color: yellow !important;
             } */
-            .info {
-                font-size: 80vh;
-            }
         }
         
-        @media (max-height: 500px) {
+        @media screen and (min-width: 481px)and (max-width: 767px) {
             .box {
-                height: 80vh;
+                height: 88vh;
+                margin-top: 11vh;
+                width: 61vh;
+                margin-top: 10vh;
+                bottom: 6vh;
             }
             .wave {
-                top: 115%;
+                top: 97%;
+                left: -11vh;
             }
+            /* .location {
+                color: green;
+            } */
+        }
+        /* for tablet */
+        
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            .box {
+                height: 80vh;
+                margin-top: 10vh;
+            }
+            .wave {
+                top: 100%;
+                left: -8vh;
+            }
+            /* .location {
+                color: blue;
+            } */
+        }
+        /* for desktop */
+        
+        @media screen and (min-width: 1024px) {
+            .box {
+                /* height: 100vh; */
+                height: 88vh;
+                width: 70vh;
+                /* bottom: 6vh; */
+                margin-top: 10vh;
+                margin-bottom: 10vh;
+            }
+            /* .wave {
+                top: 100vh;
+                color: red;
+                left: -160px;
+            } */
+            /* .location {
+                color: red;
+            } */
         }
         
         .condition {
@@ -233,7 +286,7 @@
         #conText {
             font-size: 5rem;
             font-weight: 15;
-            font-family: 'Amatic SC', cursive;
+            /* font-family: 'Amatic SC', cursive; */
             ;
             /* animation: test 3s linear infinite alternate; */
         }
@@ -241,31 +294,18 @@
         #tempStatus {
             font-size: 3rem;
             font-weight: 15;
-            font-family: 'Amatic SC', cursive;
+            /* font-family: 'Amatic SC', cursive; */
             ;
             /* animation: test 3s linear infinite alternate; */
         }
-        /* @keyframes test {
-            from {
-                transform: scale(2);
-            }
-            to {
-                transform: scale(1);
-            }
-        } */
         
         body>span {
             width: 100vw;
             text-align: center;
             color: grey;
         }
-        /* .fa-clock {
-            position: absolute;
-            right: 10px;
-            font-size: large;
-        } */
     </style>
-    <title>Weather App</title>
+
 </head>
 
 <body>
@@ -296,8 +336,6 @@
                 <i id="tempStatus">{%tempStatus%}</i>
             </div>
 
-
-
             <p id="feelTemp">Feels like {%feels_like%}</p>
 
             <p id="date">WED | JULY 13 | 1:12AM</p>
@@ -323,12 +361,10 @@
 
     } else if (tempStatus == "Haze") {
         document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/128/1197/1197102.png";
-        // document.getElementById("image").src = "https://www.nicepng.com/png/full/123-1236627_haze-icon-png-haze-weather-icon.png";
-        // weathercon.innerHTML = "<i class='fas  fa-solid fa-sun-haze' style='color: #eccc68;'></i>";
     } else if (tempStatus == "Clouds") {
         document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/512/6316/6316087.png";
-    } else if (tempStatus == "Rainy") {
-        document.getElementById("image").src = "https://icons-for-free.com/iconfiles/png/512/fog+foggy+weather+icon-1320196634851598977.png";
+    } else if (tempStatus == "Rain") {
+        document.getElementById("image").src = "https://cdn-icons.flaticon.com/png/512/2864/premium/2864401.png?token=exp=1658565335~hmac=32467fdba15db1d06f72b2128d294727";
     } else {
         weathercon.innerHTML = "<i class='fas  fa-sun' style='color: #eccc68';></i>";
     }
@@ -366,13 +402,6 @@
         return (" " + hours + ":" + mins + " " + period);
     }
     thisTime.innerHTML = "<i class='fa-solid fa-clock'> </i>" + currentTime();
-
-
-
-    // document.getElementById("feelTemp")
-    //             .style.fontWeight = "bold";
-    // let temp=getElementById("feelTemp");
-    // temp.replace("")
 </script>
 
 </html>
