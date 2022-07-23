@@ -25,9 +25,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
-        * {
-            font-family: 'Amatic SC', cursive;
-        }
+        /* * {
+            
+        } */
         
         body {
             background: #cdc4f9;
@@ -50,6 +50,8 @@
         }
         
         .box {
+            font-family: 'Amatic SC', cursive;
+            /* font-family: 'Courier New', Courier, monospace; */
             /* width: 62vw; */
             /* height: 65vh; */
             border-radius: 1.5rem;
@@ -81,7 +83,7 @@
             opacity: 0.3;
             position: absolute;
             top: 95%;
-            left: -10%;
+            left: -18%;
             /* right: 8%; */
             background: powderblue;
             width: 144rem;
@@ -209,15 +211,18 @@
         
         @media screen and (max-width: 480px) {
             .box {
+                font-family: 'Courier New', Courier, monospace;
                 height: 88vh;
                 margin-top: 11vh;
-                width: 61vh;
-                margin-top: 10vh;
-                bottom: 6vh;
+                width: 44vh;
+            }
+            #conText {
+                font-weight: 0;
+                ;
             }
             .wave {
                 top: 103%;
-                left: -22vh;
+                left: -55%;
             }
             /* .location {
                 color: yellow !important;
@@ -260,17 +265,17 @@
         @media screen and (min-width: 1024px) {
             .box {
                 /* height: 100vh; */
+                /* top: -18%; */
                 height: 88vh;
                 width: 70vh;
                 /* bottom: 6vh; */
                 margin-top: 10vh;
                 margin-bottom: 10vh;
             }
-            /* .wave {
-                top: 100vh;
-                color: red;
-                left: -160px;
-            } */
+            .wave {
+                left: -10%;
+                /* right: 10%; */
+            }
             /* .location {
                 color: red;
             } */
@@ -285,7 +290,7 @@
         
         #conText {
             font-size: 5rem;
-            font-weight: 15;
+            font-weight: 0;
             /* font-family: 'Amatic SC', cursive; */
             ;
             /* animation: test 3s linear infinite alternate; */
@@ -327,7 +332,10 @@
             <img id="image" src="/fog.png" width="60" height="60">
         </div>
         <div class="condition">
-            <h1 id="conText" style="color: #1C2331;">{%temp_val%}</h1>
+            <h1 id="conText" style="color: #1C2331;">{%temp_val%}</h1><br>
+        </div>
+        <div>
+            <h3 style="color: #1C2331; text-align: center; font-size: 1.2rem;"><i class="fa-solid fa-arrow-up-long"></i>&nbsp;{%max_val%} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-down-long"></i>&nbsp;{%min_val%}</h3>
         </div>
 
         <div class="info">

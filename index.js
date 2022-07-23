@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 8080;
 const indexFile = fs.readFileSync('index.html', "utf-8")
 const InsertVal = (destination, source) => {
     let details = destination.replace("{%temp_val%}", kelvinToCelcius(source.main.temp));
+    details = details.replace("{%max_val%}", kelvinToCelcius2(source.main.temp_max));
+    details = details.replace("{%min_val%}", kelvinToCelcius2(source.main.temp_min));
     details = details.replace("{%humidity%}", source.main.humidity);
     details = details.replace("{%feels_like%}", kelvinToCelcius(source.main.feels_like).bold());
     details = details.replace("{%location%}", source.name);
@@ -17,6 +19,9 @@ const InsertVal = (destination, source) => {
     return details;
 };
 const kelvinToCelcius = (Ftemp) => {
+    return (Ftemp - 273).toFixed() + "°C";
+}
+const kelvinToCelcius2 = (Ftemp) => {
     return (Ftemp - 273).toFixed(2) + "°C";
 }
 
