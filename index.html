@@ -25,18 +25,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
-        /* * {
-            
-        } */
-        
         body {
-            background: #cdc4f9;
             display: flex;
             justify-content: center;
             align-items: centre;
             flex-wrap: wrap;
             height: 100vh;
             width: 100vw;
+            /* background-image: url('https://papers.co/wallpaper/papers.co-bj17-sky-purple-pastel-art-36-3840x2400-4k-wallpaper.jpg'); */
+            /* background-image: url('https://dthezntil550i.cloudfront.net/ek/latest/ek1707231846311020002901992/1280_960/a43e8d94-d374-45b9-beb3-3af406586aee.png'); */
+            /* background-image: url('https://lh3.googleusercontent.com/proxy/BLdx4JFcRS-fSf2MHXJYlZojB96gl2VyecqzQn3EN8SLhbkQEoCGQG54YgD25QWMu3Pgy7VPT_txFXIpDJA=w1200-h630-p-k-no-nu'); */
+            background-image: url('https://lh3.googleusercontent.com/proxy/BLdx4JFcRS-fSf2MHXJYlZojB96gl2VyecqzQn3EN8SLhbkQEoCGQG54YgD25QWMu3Pgy7VPT_txFXIpDJA=w1200-h630-p-k-no-nu');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
         }
         
         html,
@@ -58,7 +60,8 @@
             border: 5px solid black;
             box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
             /* background: #a5bbdd; */
-            background: white;
+            /* background: white; */
+            background: #cdc4f9;
             position: relative;
             overflow: hidden;
             transform: translate3d(0, 0, 0);
@@ -70,6 +73,7 @@
             width: 61vh;
             margin-top: 10vh;
             bottom: 6vh;
+            /* opacity: 50%; */
         }
         
         #time {
@@ -85,7 +89,8 @@
             top: 95%;
             left: -18%;
             /* right: 8%; */
-            background: powderblue;
+            /* background: powderblue; */
+            background: mediumslateblue;
             width: 144rem;
             height: 140rem;
             margin-left: -42rem;
@@ -212,17 +217,22 @@
         @media screen and (max-width: 480px) {
             .box {
                 font-family: 'Courier New', Courier, monospace;
-                height: 88vh;
-                margin-top: 11vh;
-                width: 44vh;
+                height: 73vh;
+                margin-top: 8.5vh;
+                width: 41vh;
+                left: -1vh;
             }
             #conText {
                 font-weight: 0;
                 ;
             }
             .wave {
-                top: 103%;
-                left: -55%;
+                top: 98%;
+                left: -36%;
+                background: mediumslateblue;
+            }
+            .box {
+                background: #cdc4f9;
             }
             /* .location {
                 color: yellow !important;
@@ -318,7 +328,7 @@
     <div class="box">
 
 
-        <h2 class="location"><i class='fa-solid fa-street-view'></i> {%location%}, {%country%}</h2>
+        <h2 class="location "><i class='fa-solid fa-street-view'></i> {%location%}, {%country%}</h2>
         <p id="time"></p>
 
 
@@ -332,8 +342,9 @@
             <img id="image" src="/fog.png" width="60" height="60">
         </div>
         <div class="condition">
-            <h1 id="conText" style="color: #1C2331;">{%temp_val%}</h1><br>
+            <h1 id="conText" style="color:#1C2331;">{%temp_val%}</h1><br>
         </div>
+
         <div>
             <h3 style="color: #1C2331; text-align: center; font-size: 1.2rem;"><i class="fa-solid fa-arrow-up-long"></i>&nbsp;{%max_val%} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-down-long"></i>&nbsp;{%min_val%}</h3>
         </div>
