@@ -234,9 +234,10 @@
             .box {
                 background: #cdc4f9;
             }
-            /* .location {
-                color: yellow !important;
-            } */
+            body {
+                background: white;
+                background-image: none;
+            }
         }
         
         @media screen and (min-width: 481px)and (max-width: 767px) {
@@ -376,14 +377,14 @@
 
     //condition to check weather
     if (tempStatus == "Sunny") {
-        document.getElementById("image").src = "https://cdn-icons.flaticon.com/png/512/3199/premium/3199959.png?token=exp=1658522291~hmac=2bdaca7d675b81c4d8363fa46b8b98cb";
+        document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/512/869/869767.png";
 
     } else if (tempStatus == "Haze") {
         document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/128/1197/1197102.png";
     } else if (tempStatus == "Clouds") {
         document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/512/6316/6316087.png";
     } else if (tempStatus == "Rain") {
-        document.getElementById("image").src = "https://cdn-icons.flaticon.com/png/512/2864/premium/2864401.png?token=exp=1658565335~hmac=32467fdba15db1d06f72b2128d294727";
+        document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/512/3351/3351979.png";
     } else {
         weathercon.innerHTML = "<i class='fas  fa-sun' style='color: #eccc68';></i>";
     }
